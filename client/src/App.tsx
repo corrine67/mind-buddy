@@ -9,6 +9,8 @@ import Dashboard from "./pages/Dashboard";
 import Chat from "./pages/Chat";
 import Community from "./pages/Community";
 import Profile from "./pages/Profile";
+import Intro from "./pages/Intro";
+import { useAuth } from "@/_core/hooks/useAuth";
 import { Heart, MessageCircle, Users, BarChart3, User } from "lucide-react";
 
 function BottomNav() {
@@ -42,6 +44,17 @@ function BottomNav() {
 }
 
 function Router() {
+  const { isAuthenticated } = useAuth();
+
+  // Show intro page if not authenticated
+  if (!isAuthenticated) {
+    return (
+      <Switch>
+        <Route path={"/*"} component={Intro} />
+      </Switch>
+    );
+  }
+
   return (
     <Switch>
       <Route path={"/"} component={Home} />
@@ -56,16 +69,18 @@ function Router() {
 }
 
 function App() {
+  const { isAuthenticated } = useAuth();
+
   return (
     <ErrorBoundary>
-      <ThemeProvider defaultTheme="dark">
+      <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
           <div className="app-shell">
             <div className="app-content">
               <Router />
             </div>
-            <BottomNav />
+            {isAuthenticated && <BottomNav />}
           </div>
         </TooltipProvider>
       </ThemeProvider>
