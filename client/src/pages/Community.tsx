@@ -91,7 +91,7 @@ export default function Community() {
           {!showPostForm && (
             <Button
               onClick={() => setShowPostForm(true)}
-              className="w-full bg-gradient-to-r from-purple-600 to-cyan-500 text-white hover:shadow-lg hover:shadow-cyan-500/20"
+              className="w-full bg-gradient-to-r from-sky-500 to-blue-400 text-white hover:shadow-lg hover:shadow-sky-400/30"
             >
               Share Your Feelings
             </Button>
@@ -99,7 +99,7 @@ export default function Community() {
 
           {/* Post Form */}
           {showPostForm && (
-            <Card className="card-gradient border-purple-700/30 space-y-3">
+            <Card className="card-gradient border-sky-200 space-y-3">
               <textarea
                 value={newPost}
                 onChange={(e) => setNewPost(e.target.value)}
@@ -108,11 +108,11 @@ export default function Community() {
                 rows={4}
               />
               <div className="flex gap-2">
-                <Button
-                  onClick={handlePostSubmit}
-                  disabled={!newPost.trim()}
-                  className="flex-1 bg-gradient-to-r from-purple-600 to-cyan-500 text-white hover:shadow-lg hover:shadow-cyan-500/20"
-                >
+              <Button
+                onClick={handlePostSubmit}
+                disabled={!newPost.trim()}
+                className="flex-1 bg-gradient-to-r from-sky-500 to-blue-400 text-white hover:shadow-lg hover:shadow-sky-400/30"
+              >
                   <Send size={16} className="mr-2" />
                   Post
                 </Button>
@@ -126,7 +126,7 @@ export default function Community() {
           {/* Posts Feed */}
           <div className="space-y-3">
             {posts.map((post) => (
-              <Card key={post.id} className="card-interactive space-y-3 border-purple-700/30">
+              <Card key={post.id} className="card-interactive space-y-3 border-sky-200">
                 <div className="flex items-start justify-between">
                   <div>
                     <p className="text-sm font-semibold text-accent">{post.anonymousName}</p>
@@ -144,7 +144,7 @@ export default function Community() {
                     <button
                       key={emoji}
                       onClick={() => handleReaction(post.id, emoji)}
-                      className="flex items-center gap-1 rounded-full bg-border px-2 py-1 text-xs transition-all duration-200 hover:bg-accent/20"
+                      className="flex items-center gap-1 rounded-full bg-sky-100 px-2 py-1 text-xs transition-all duration-200 hover:bg-sky-200"
                     >
                       <span>{emoji}</span>
                       {post.reactions[emoji] > 0 && <span>{post.reactions[emoji]}</span>}
@@ -153,7 +153,7 @@ export default function Community() {
                 </div>
 
                 {/* Reply Count */}
-                <button className="flex items-center gap-1 text-xs text-muted-foreground hover:text-accent">
+                <button className="flex items-center gap-1 text-xs text-muted-foreground hover:text-sky-500">
                   <MessageCircle size={14} />
                   {post.replyCount} replies
                 </button>

@@ -70,8 +70,8 @@ export default function Chat() {
                 <div
                   className={`max-w-xs rounded-lg px-4 py-2 ${
                     message.role === "user"
-                      ? "bg-gradient-to-r from-purple-600 to-cyan-500 text-white"
-                      : "card-gradient border-purple-700/30"
+                      ? "bg-gradient-to-r from-sky-500 to-blue-400 text-white"
+                      : "card-gradient border-sky-200"
                   }`}
                 >
                   <p className="text-sm">{message.content}</p>
@@ -109,7 +109,7 @@ export default function Chat() {
               onClick={handleSendMessage}
               disabled={!input.trim() || isLoading}
               size="sm"
-              className="bg-gradient-to-r from-purple-600 to-cyan-500 text-white hover:shadow-lg hover:shadow-cyan-500/20"
+              className="bg-gradient-to-r from-sky-500 to-blue-400 text-white hover:shadow-lg hover:shadow-sky-400/30"
             >
               <Send size={16} />
             </Button>

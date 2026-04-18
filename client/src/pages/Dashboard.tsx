@@ -64,7 +64,7 @@ export default function Dashboard() {
           </div>
 
           {/* Wellness Score */}
-          <Card className="card-gradient border-purple-700/30 space-y-4">
+          <Card className="card-gradient border-sky-200 space-y-4">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">Weekly Wellness Score</p>
@@ -74,18 +74,18 @@ export default function Dashboard() {
                 <div className="text-5xl font-bold text-accent">{wellnessScore}%</div>
               </div>
             </div>
-            <div className="h-2 w-full rounded-full bg-border">
+            <div className="h-2 w-full rounded-full bg-sky-100">
               <div
-                className="h-full rounded-full bg-gradient-to-r from-purple-500 to-cyan-400"
+                className="h-full rounded-full bg-gradient-to-r from-sky-400 to-blue-400"
                 style={{ width: `${wellnessScore}%` }}
               />
             </div>
           </Card>
 
           {/* Mood Trend */}
-          <Card className="card-gradient border-purple-700/30 space-y-3">
+          <Card className="card-gradient border-sky-200 space-y-3">
             <h2 className="flex items-center gap-2 text-sm font-semibold">
-              <TrendingUp size={16} className="text-accent" />
+              <TrendingUp size={16} className="text-sky-500" />
               Mood Trend
             </h2>
             <ResponsiveContainer width="100%" height={200}>
@@ -95,17 +95,17 @@ export default function Dashboard() {
                 <YAxis stroke="rgba(255,255,255,0.5)" domain={[0, 5]} />
                 <Tooltip
                   contentStyle={{
-                    backgroundColor: "rgba(30, 20, 50, 0.9)",
-                    border: "1px solid rgba(200, 100, 255, 0.3)",
+                    backgroundColor: "rgba(255, 255, 255, 0.95)",
+                    border: "1px solid rgba(100, 150, 255, 0.3)",
                     borderRadius: "8px",
                   }}
                 />
                 <Line
                   type="monotone"
                   dataKey="mood"
-                  stroke="#00d9ff"
+                  stroke="#0ea5e9"
                   strokeWidth={2}
-                  dot={{ fill: "#a855f7", r: 4 }}
+                  dot={{ fill: "#3b82f6", r: 4 }}
                   activeDot={{ r: 6 }}
                 />
               </LineChart>
@@ -124,24 +124,24 @@ export default function Dashboard() {
           </Card>
 
           {/* Habit Streak */}
-          <Card className="card-gradient border-purple-700/30 space-y-3">
+          <Card className="card-gradient border-sky-200 space-y-3">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <Zap size={20} className="text-accent" />
+                <Zap size={20} className="text-sky-500" />
                 <h2 className="font-semibold">Current Streak</h2>
               </div>
-              <span className="text-2xl font-bold text-accent">{streakDays} days</span>
+              <span className="text-2xl font-bold text-sky-500">{streakDays} days</span>
             </div>
             <p className="text-sm text-muted-foreground">Keep up your wellness habits!</p>
-            <Button className="w-full bg-gradient-to-r from-purple-600 to-cyan-500 text-white hover:shadow-lg hover:shadow-cyan-500/20">
+            <Button className="w-full bg-gradient-to-r from-sky-500 to-blue-400 text-white hover:shadow-lg hover:shadow-sky-400/30">
               View All Habits
             </Button>
           </Card>
 
           {/* AI Insights */}
-          <Card className="card-gradient border-purple-700/30 space-y-3">
+          <Card className="card-gradient border-sky-200 space-y-3">
             <div className="flex items-center gap-2">
-              <Target size={20} className="text-accent" />
+              <Target size={20} className="text-sky-500" />
               <h2 className="font-semibold">AI Insights</h2>
             </div>
             <div className="space-y-2 text-sm">

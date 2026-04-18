@@ -23,7 +23,7 @@ export default function Profile() {
           {/* User Info */}
           <Card className="card-gradient border-purple-700/30 space-y-4">
             <div className="flex items-center gap-4">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 to-cyan-500">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-sky-500 to-blue-400">
                 <User size={32} className="text-white" />
               </div>
               <div>
@@ -34,7 +34,7 @@ export default function Profile() {
           </Card>
 
           {/* Wellness Stats */}
-          <Card className="card-gradient border-purple-700/30 space-y-3">
+          <Card className="card-gradient border-sky-200 space-y-3">
             <h2 className="font-semibold">Wellness Stats</h2>
             <div className="grid grid-cols-3 gap-3">
               <div className="rounded-lg bg-border p-3 text-center">
@@ -56,33 +56,33 @@ export default function Profile() {
           <div className="space-y-2">
             <h2 className="text-sm font-semibold">Settings</h2>
 
-            <Card className="card-interactive flex items-center justify-between border-purple-700/30">
+            <Card className="card-interactive flex items-center justify-between border-sky-200">
               <div className="flex items-center gap-3">
-                <Bell size={20} className="text-accent" />
+                <Bell size={20} className="text-sky-500" />
                 <span className="text-sm font-medium">Notifications</span>
               </div>
               <span className="text-xs text-muted-foreground">Enabled</span>
             </Card>
 
-            <Card className="card-interactive flex items-center justify-between border-purple-700/30">
+            <Card className="card-interactive flex items-center justify-between border-sky-200">
               <div className="flex items-center gap-3">
-                <Heart size={20} className="text-accent" />
+                <Heart size={20} className="text-sky-500" />
                 <span className="text-sm font-medium">Trusted Contacts</span>
               </div>
               <span className="text-xs text-muted-foreground">2 added</span>
             </Card>
 
-            <Card className="card-interactive flex items-center justify-between border-purple-700/30">
+            <Card className="card-interactive flex items-center justify-between border-sky-200">
               <div className="flex items-center gap-3">
-                <Shield size={20} className="text-accent" />
+                <Shield size={20} className="text-sky-500" />
                 <span className="text-sm font-medium">Privacy</span>
               </div>
               <span className="text-xs text-muted-foreground">Manage</span>
             </Card>
 
-            <Card className="card-interactive flex items-center justify-between border-purple-700/30">
+            <Card className="card-interactive flex items-center justify-between border-sky-200">
               <div className="flex items-center gap-3">
-                <HelpCircle size={20} className="text-accent" />
+                <HelpCircle size={20} className="text-sky-500" />
                 <span className="text-sm font-medium">Help & Support</span>
               </div>
               <span className="text-xs text-muted-foreground">Learn more</span>
