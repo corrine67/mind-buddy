@@ -35,6 +35,14 @@ export default function Home() {
             </p>
           </div>
 
+          <div className="space-y-3">
+            <p className="text-sm text-gray-600">Recent login:</p>
+            <div className="rounded-lg bg-sky-50 p-3 border border-sky-200">
+              <p className="font-semibold text-gray-900">john</p>
+              <p className="text-xs text-gray-600">john@gmail.com</p>
+            </div>
+          </div>
+
           <a href={getLoginUrl()}>
             <Button size="lg" className="w-full bg-gradient-to-r from-sky-500 to-blue-400 text-white hover:shadow-lg hover:shadow-sky-400/30">
               Sign In with Manus

@@ -28,7 +28,7 @@ export default function Profile() {
               </div>
               <div>
                 <h2 className="text-lg font-bold">john</h2>
-                <p className="text-sm text-muted-foreground">{user?.email || "No email"}</p>
+                <p className="text-sm text-muted-foreground">john@gmail.com</p>
               </div>
             </div>
           </Card>
