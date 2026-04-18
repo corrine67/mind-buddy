@@ -46,25 +46,25 @@ function BottomNav() {
 function Router() {
   const { isAuthenticated } = useAuth();
 
-  // Show intro page only if not authenticated
-  if (!isAuthenticated) {
+  // Authenticated user - show app pages
+  if (isAuthenticated) {
     return (
       <Switch>
-        <Route path={"/*"} component={Intro} />
+        <Route path={"/"} component={Home} />
+        <Route path={"/chat"} component={Chat} />
+        <Route path={"/community"} component={Community} />
+        <Route path={"/dashboard"} component={Dashboard} />
+        <Route path={"/profile"} component={Profile} />
+        <Route path={"/404"} component={NotFound} />
+        <Route component={Home} />
       </Switch>
     );
   }
 
-  // Once authenticated, always show the app
+  // Not authenticated - show intro page
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/chat"} component={Chat} />
-      <Route path={"/community"} component={Community} />
-      <Route path={"/dashboard"} component={Dashboard} />
-      <Route path={"/profile"} component={Profile} />
-      <Route path={"/404"} component={NotFound} />
-      <Route component={NotFound} />
+      <Route component={Intro} />
     </Switch>
   );
 }
