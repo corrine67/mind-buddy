@@ -44,10 +44,11 @@ function BottomNav() {
 }
 
 function Router() {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, loading } = useAuth();
+  const [location] = useLocation();
 
-  // Show intro page if not authenticated
-  if (!isAuthenticated) {
+  // Show intro page only if not authenticated AND not loading
+  if (!isAuthenticated && !loading) {
     return (
       <Switch>
         <Route path={"/*"} component={Intro} />
@@ -55,6 +56,19 @@ function Router() {
     );
   }
 
+  // Show loading state while checking auth
+  if (loading) {
+    return (
+      <div className="flex min-h-screen items-center justify-center">
+        <div className="text-center">
+          <div className="mb-4 h-12 w-12 animate-spin rounded-full border-4 border-sky-200 border-t-sky-500 mx-auto"></div>
+          <p className="text-gray-600">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Once authenticated, always show the app
   return (
     <Switch>
       <Route path={"/"} component={Home} />

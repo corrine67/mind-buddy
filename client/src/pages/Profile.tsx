@@ -21,13 +21,13 @@ export default function Profile() {
           </div>
 
           {/* User Info */}
-          <Card className="card-gradient border-purple-700/30 space-y-4">
+          <Card className="card-gradient border-sky-200 space-y-4">
             <div className="flex items-center gap-4">
               <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-sky-500 to-blue-400">
                 <User size={32} className="text-white" />
               </div>
               <div>
-                <h2 className="text-lg font-bold">{user?.name || "User"}</h2>
+                <h2 className="text-lg font-bold">john</h2>
                 <p className="text-sm text-muted-foreground">{user?.email || "No email"}</p>
               </div>
             </div>
